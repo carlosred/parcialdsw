@@ -19,7 +19,7 @@ function cualImagen( fila, col ){
 }
 
 function htmlCarta( fila, col ){
-	return '<div id="celdas"><img id ="imagen" src="' + cualImagen(fila,col) + '" /></div>';
+	return '<div><img id ="imagen" src="' + cualImagen(fila,col) + '" /></div>';
 }
 
 function repartir(){
@@ -37,31 +37,12 @@ function repartir(){
 }	
 	
 //funcion para descubrir la carta al darle click
- function manejarevento(ev){
- 	var click;
- 	var seleccionado=false;
- 	var img ;
- 	
- 	if(ev.target.id=="celdas" && seleccionado == false){
- 		seleccionado= true;
- 		
- 		 var img = document.getElementById('imagen');
- 		 console.log(img.innerHTML);
-    		img.style.visibility = 'visible';
- 	
- 	}
  
-
- }
- 	
 
 	</script>
 	<style>
 	
-#tablero{
-	width: 500;
-	height: 500;
-}
+
 
 #tablero img
 {
@@ -74,17 +55,14 @@ function repartir(){
 	padding: 4px;
 	border-width: 5px;
 	margin: 8px;
-	width: 100px;
-    height: 100px;
-	table-layout: auto;  
-
+	 
 }
 
 	</style>
 	</head>
 	<body>
 	<button onclick="repartir()">Repartir</button>
-	<div onclick="manejarevento(event)" id="tablero"></div>
+	<div id="tablero"></div>
 	<div id="puntaje"></div>
 	</body>
 </html>
